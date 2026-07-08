@@ -26,4 +26,12 @@ def generate_password():
         except ValueError:
             print("Numbers only, please!")
 
-generate_password()
+
+# Asking the user whether they are satisfied or no
+while True:
+    generate_password()
+
+    Retry = input("Retry? (yes/no) ")
+    if Retry.lower() != "yes":
+        print("Thank you for using this Password Generator!")
+        break
