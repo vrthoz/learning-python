@@ -4,7 +4,6 @@ import random # Importing the random module to randomly select password characte
 def generate_password():
     characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
     
-
     while True: # Main loop to keep asking for password length until a valid input is given
         try:
             password_result = "" # Password container
