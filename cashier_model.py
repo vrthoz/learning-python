@@ -1,21 +1,33 @@
-print("CASHIER V1.0")
+print("CASHIER V2.0")
 
 # Bundling the cashier system logic into a function
 def start_cashier():
     cart = []
+    item_dict = {
+        "apple": 3000,
+        "bread": 3500,
+        "tea": 2500,
+        "noodle": 1500,
+        "detergent": 7500,
+        "fried chicken": 5000
+    }
+    payment_total = 0
 
     while True: # Main loop
-        items = input("Welcome! Enter an item to buy, or type 'Checkout' to finish: ")
-        if items.lower() == "checkout":
-            break
-        elif items.isdigit(): # Precaution to prevent user from inputting a number
-            print("Is there an item named after numbers?")
-        else: # Appending together all the inputted items into the variable "cart"
+        items = input("Enter an item to buy, or type 'Checkout' to finish: ")
+        if items.lower() in item_dict:
             cart.append(items)
+            payment_total += item_dict[items.lower()]
+        elif items.lower() == 'checkout':
+            break
+        else:
+            print("Sorry, we don't sell those items!")
 
+# Printing the receipt
     print("Here's all of the items that you've bought!")
     for total in cart:
         print(total)
+    print(f"The total is: Rp{payment_total}")
 
 start_cashier()
 
