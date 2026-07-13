@@ -1,4 +1,4 @@
-print("CASHIER V2.0")
+print("CASHIER V3.0")
 
 # Bundling the cashier system logic into a function
 def start_cashier():
@@ -27,7 +27,12 @@ def start_cashier():
     print("Here's all of the items that you've bought!")
     for total in cart:
         print(total)
-    print(f"The total is: Rp{payment_total}")
+    print(f"The total is: Rp {payment_total:,}")
+
+    with open('receipt.txt', 'w') as file:
+        for all_items in cart:
+            file.write(f'{all_items}\n')
+        file.write(f'Payment Total:{payment_total}')
 
 start_cashier()
 
