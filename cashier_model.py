@@ -31,9 +31,10 @@ def start_cashier():
     print(f"The total is: Rp {payment_total:,}")
 
     with open('receipt.txt', 'w') as file:
+        file.write('Items:\n')
         for all_items in cart:
             file.write(f'{all_items}\n')
-        file.write(f'Payment Total:{payment_total}')
+        file.write(f'Payment Total: {payment_total}')
 
 start_cashier()
 
