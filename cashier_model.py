@@ -9,7 +9,8 @@ def start_cashier():
         "tea": 2500,
         "noodle": 1500,
         "detergent": 7500,
-        "fried chicken": 5000
+        "fried chicken": 5000,
+        "chips": 7000
     }
     payment_total = 0
 
